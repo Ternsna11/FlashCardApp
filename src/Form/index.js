@@ -22,48 +22,46 @@ function CardForm({
     setCard({ front: "", back: "" });
   }
   return (
-    <>
-      <form onSubmit={submitHandler} className="deck-edit">
-        <fieldset>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="form-control"
-              value={deck.name}
-              required={true}
-              placeholder="Deck Name"
-              onChange={changeHandler}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="description">Description</label>
-            <textarea
-              id="description"
-              name="description"
-              className="form-control"
-              rows="4"
-              required={true}
-              placeholder="Brief description of the deck"
-              value={deck.description}
-              onChange={changeHandler}
-            />
-          </div>
-          <button
-            type="button"
-            className="btn btn-secondary mr-2"
-            onClick={onCancel}
-          >
-            Cancel
-          </button>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </fieldset>
-      </form>
-    </>
+    <form onSubmit={submitHandler} className="card-form">
+      <fieldset>
+        <legend>{deckName}: Add Card</legend>
+
+        <div className="form-group">
+          <label htmlFor="front">Front</label>
+          <textarea
+            id="front"
+            name="front"
+            className="form-control"
+            required={true}
+            placeholder="Front side of card"
+            value={card.front}
+            onChange={changeHandler}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="back">Back</label>
+          <textarea
+            id="back"
+            name="back"
+            className="form-control"
+            required={true}
+            placeholder="Back side of card"
+            value={card.back}
+            onChange={changeHandler}
+          />
+        </div>
+
+        <button
+          className="btn btn-secondary mr-2"
+          onClick={onDone}
+        >
+          {doneButtonLabel}
+        </button>
+        <button type="submit" className="btn btn-primary" tabIndex="3">
+          Save
+        </button>
+      </fieldset>
+    </form>
   );
 }
 export default CardForm;
