@@ -7,7 +7,7 @@ function CardList({ deck, onCardDelete }) {
   const list = cards.map((card) => (
     <li
       key={card.id}
-      className="card-list-item list-group-item-action flex-column align-items-start"
+      className="list-group-item list-group-item-action flex-column align-items-start"
     >
       <div className="row">
         <div className="col-md-10">
@@ -36,9 +36,9 @@ function CardList({ deck, onCardDelete }) {
   ));
 
   return (
-    <div className="mt-3 card-group">
+    <div className="card-group mt-3">
       <h3>Cards</h3>
-      <ul className="card-list">{list}</ul>
+      <ul className="list-group">{list}</ul>
     </div>
   );
 }
