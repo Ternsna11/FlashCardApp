@@ -11,7 +11,8 @@ function EditDeck() {
   useEffect(() => {
     readDeck(deckId).then(setDeck);
   }, [deckId]);
-  function submitHandler(updateDeck) {
+
+  function submitHandler(updatedDeck) {
     updateDeck(updateDeck).then((savedDeck) =>
       history.push(`/decks/${savedDeck.id}`)
     );
@@ -20,7 +21,7 @@ function EditDeck() {
     history.goBack();
   }
   const deckInfo = deck.id ? (
-    <DeckForm onCancel={cancel} onSubmit={submitHandler} initalState={deck} />
+    <DeckForm onCancel={cancel} onSubmit={submitHandler} initialState={deck} />
   ) : (
     <p>Loading...</p>
   );

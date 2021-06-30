@@ -4,10 +4,10 @@ function CardForm({
   onSubmit,
   onDone,
   deckName = "Loading...",
-  initalState,
+  initialState,
   doneButtonLabel = "Done",
 }) {
-  const [card, setCard] = useState(initalState);
+  const [card, setCard] = useState(initialState);
 
   function changeHandler({ target: { name, value } }) {
     setCard((prevState) => ({

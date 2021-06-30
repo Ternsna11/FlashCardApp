@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { createCard, readDeck } from "../../utils/api";
-import CardForm from "../From";
+import CardForm from "../Form";
 
 function CardCreate() {
   const history = useHistory();
@@ -9,7 +9,7 @@ function CardCreate() {
   const [deck, setDeck] = useState({ cards: [] });
   // making our useState then giving it default with object and cards and the value empty array
   useEffect(() => {
-    readDeck(deck.Id).then(setDeck);
+    readDeck(deckId).then(setDeck);
   }, [deckId]); // calling useEffect to render when deckId changes, after we call readDeck function with deck.Id as arguement then we run setDeck
 
   function submitHandler(card) {

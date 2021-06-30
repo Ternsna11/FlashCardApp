@@ -9,7 +9,7 @@ function NotEnoughStudyCards({ deckId, cardCount }) {
         You need to have at least 3 cards to study. There are {cardCount} in
         this deck.
       </p>
-      <Link to={`/decks/${deck.id}/cards/new`}>
+      <Link to={`/decks/${deckId}/cards/new`} className="btn btn-primary">
         <span className="oi oi-plus" /> Add Cards
       </Link>
     </>

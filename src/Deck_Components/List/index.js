@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { deleteDeck, listDecks } from "../../utils/api";
 
-function ListDecks() {
+function DeckList() {
+  const [decks, setDecks] = useState([]);
   useEffect(loadDecks, []); // running loadDeck function  to run effect then only running it once ([])
   function deleteHandler(deckId) {
     const confirm = window.confirm(
@@ -56,4 +57,4 @@ function ListDecks() {
   );
 }
 
-export default ListDecks;
+export default DeckList;

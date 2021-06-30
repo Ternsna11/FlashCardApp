@@ -36,7 +36,7 @@ function CardList({ deck, onCardDelete }) {
   ));
 
   return (
-    <div className="card-group mt-3">
+    <div className="mt-4 card-list">
       <h3>Cards</h3>
       <ul className="list-group">{list}</ul>
     </div>
