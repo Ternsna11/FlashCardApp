@@ -24,7 +24,7 @@ function DeckList() {
     >
       <div className="d-flex w-100 justify-content-between">
         <h5 className="mb-1">{deck.name}</h5>
-        <small>{deck.cards.length}</small>
+        <small>{deck.cards.length} cards</small>
       </div>
       <p className="mb-1">{deck.description}</p>
       <Link

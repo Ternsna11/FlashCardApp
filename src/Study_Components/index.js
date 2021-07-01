@@ -32,7 +32,7 @@ function Study() {
   if (cardCount <= 2) {
     return (
       <StudyLayout name={deck.name} deckId={deckId}>
-        <NotEnoughStudyCards deckId={deckId} cardCount={cardCount} />
+         <NotEnoughStudyCards deckId={deckId} cardCount={cardCount} />
       </StudyLayout>
     );
   }
